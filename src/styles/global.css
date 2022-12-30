@@ -1,3 +1,5 @@
 @import url(../tailwindconfig.css);
 @import url(./tailwindOutput/output.css);
 @import url(scrool.css);
+@import url(boxShadow.css);
+
