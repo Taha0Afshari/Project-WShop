@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 @import "tailwindOutput/output.css";
 @import "/src/tailwindconfig.css";
 @import "boxShadow.css";
+=======
+@import url(../tailwindconfig.css);
+@import url(./tailwindOutput/output.css);
+@import url(scrool.css);
+>>>>>>> 4826edfaf3171538b3b01877072baa2f1915aac9
