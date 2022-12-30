@@ -5,9 +5,333 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WShop</title>
-    <link rel="stylesheet" href="/src/styles/global.css">
+    <link rel="stylesheet" href="../styles/global.css">
+    <style>
+        @font-face {
+            font-family: iranSans;
+            src: url("./assets/fonts/iranSans/IRANSansWeb.ttf");
+        }
+
+        * {
+            font-family: "IRANSansWeb(FaNum)";
+        }
+    </style>
 </head>
-<body>
-    
+<body dir="rtl" class="p-4">
+<header class="p-[1rem] flex justify-between items-center shadow-md shadow-zinc-300 rounded-xl  h-18">
+    <svg width="80" height="70" viewBox="0 0 179 115" fill="none" xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink">
+        <rect width="179" height="114.209" fill="url(#pattern0)"/>
+        <defs>
+
+            <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                <use xlink:href="#image0_140_2" transform="scale(0.00613497 0.00961538)"/>
+            </pattern>
+            <image id="image0_140_2" width="163" height="104"
+                   xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKMAAABoCAYAAACdQ0D3AAAACXBIWXMAAAsSAAALEgHS3X78AAAFI0lEQVR4nO3dPXKjSBjG8fayB1hvsAdgo409J9iyUmWapHP5CPIRxkcY8k7GGal1Bd1glyMMJ1BpCtcrCQlomi/5lfz/VbnKgwHx8ai7aRrmbrfbGUCD3zgL0IIwQg3CCDUII9QgjFCDMEINwgg1CCPUIIxQgzBCDcIINQgj1CCMUIMwQg3CCDUII9QgjFCDMEINwgg1CCPUIIxQgzBCjd85FZfjnLs3xjx4PjC31m4qUz8JwnhZRRDfPJ+4NsbMKlM/CappqHGTJaNzzlf6bKy1z5Wp+HC3Wk0/VqZAPappqEEYoQZX0wM451bGmG9XuwPKUDJCDcIINQgj1CCMUIMwQg3CCDUII9Sgn3EAa+2LMeblandgRNtsXtyCjY0x96W15sVYgChOg4bFEUb0JgFcyM9903q22TwzxiRRnHq/uIQRnW2zeRG8lfyEKErMb9tsXoT2qamkpM2ITiSIbx2CWPY+uFjWUUEY0dWq5dGJNkUQf9TNc6imnXOPbUPirbUXHRIfMBDhWS4iVG3DpZbpY5vNWz+nqW1Xqp6Hetxm82UUp0l5PZSM6GIx4tGqrIswoosxR9AXpWNcnkAY0UVIW7G4Un41xmSVv1SdhJuuHXQRt8z7EsXp4WG3bTb/boxZVuY6omTEZJKzFbc9hXlS0hJGBDlv39WJ4vSkao7iNJdquwklI3ppDWODvH7yu08fxiEdtp9Z6wVJ052VUF3COOiDepoiOF3349bC2+s8nlfBDSp9h110CeODc+5iJ8Y5Fwf0a/mqgEbF3Q5Zf6Pi7865ZcABXsjbxcq86y6uMHssU2zzoJMt7b4h62g73sVgiNU2mwfnpDzv3W63e/9FDs7Pyty6zay16/MtdM79vHBJnsmV5EZKUt/ttiHLnPj3n43564//KtMHejq/Tbe3zeY/Rr4LU5hFcfp+Dg8lo7W27cpHm7wuiKJp+lRiCdNbh1D1WeYSfMdu0nycV9O13wilXj2b5TugaLZuaRsmfZtGIU7CaK1NAm/jfLTcN9z/ivZDm8Zjao79ht55hqi7gHmqTNGnGE7VFrZr2A9NXvZtNx8ZXjZJDVoJo7TDNJ/IREo+L6X7MVkVN1BSvqfcJorTpykCWQmjOVZzXxUevKJEDA6Y7MdsxDZk0YD/0uNE5LIds47Nh+cLtH+fJVydyDJjHttj104d6e5ZSn/fR70NdiM7nARUzY1K/ZZxqSPbt09ZKTiZjHQ/XDTJyOxVQBdSIl+i3JweU9+ymSzzKsssa7Z9SNfO4Zi2XLAEkf7LLse27Mv+AS1vGOEnwVrIga88L1xc8fu+QBKyh1KH90beOe7rKbgaEtL/fdsbxend/nfCiMkEdJLnUZz+uf9HbZsRGKp44KoliOa8vUkYMToJ4veA9Z6EkWr6RsirRvrKm97yEEqGjy1Kbeg2WRSnf5fn6f0MTMBz1l1d/LnsGzPkXDT+N3ES8jHP817lTg7VNNpMMTjitW5kEGGEl9yPHtOm6c4YYUSIse6y5DJesjbghBEhasPT0aZ8t6UOYUSIxgAFSmREd+PdKMMbJRCob8m4Dh2aZggjAnlLtJL94JK1XDF3GoQxZRgnf3cijsoDDsYmJdtk69+jzQg1CCPUIIxQgzBCDcIINYZcTW+aRnoInltGJ4xnhBpU01CDMEINwgg1CCPUIIxQgzBCDcIINQgj1CCMUIMwQg3CCDUII9QgjFCDMEINwgg1CCPUIIxQgzBCDcIINQgj1CCM0MEY8wuFbXgVCoSadQAAAABJRU5ErkJggg=="/>
+        </defs>
+    </svg>
+    <div class=" bg-[#F3F3F3]  flex items-center rounded p-[1rem]  gap-[1rem]">
+        <select name="category" id="category" class="bg-transparent border-l-2 border-gray-300">
+            <option value="mobile">موبایل</option>
+            <option value="laptop">لپتاپ</option>
+            <option value="watch">ساعت</option>
+        </select>
+        <div class="bg-transparent  flex justify-between items-center ">
+            <input type="search" class="bg-transparent outline-none" placeholder="دنبال چی میگردی...">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10.9999 19C15.4182 19 18.9999 15.4182 18.9999 11C18.9999 6.58169 15.4182 2.99997 10.9999 2.99997C6.58163 2.99997 2.99991 6.58169 2.99991 11C2.99991 15.4182 6.58163 19 10.9999 19Z"
+                      stroke="#818181" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M20.9999 21L16.6499 16.65" stroke="#818181" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round"/>
+            </svg>
+
+
+        </div>
+
+    </div>
+    <div class="flex gap-[1rem]">
+        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M41.6667 43.75V39.5833C41.6667 37.3732 40.7887 35.2536 39.2259 33.6908C37.6631 32.128 35.5435 31.25 33.3333 31.25H16.6667C14.4565 31.25 12.3369 32.128 10.7741 33.6908C9.21132 35.2536 8.33334 37.3732 8.33334 39.5833V43.75"
+                  stroke="#787878" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M25 22.9167C29.6024 22.9167 33.3334 19.1857 33.3334 14.5833C33.3334 9.98096 29.6024 6.25 25 6.25C20.3976 6.25 16.6667 9.98096 16.6667 14.5833C16.6667 19.1857 20.3976 22.9167 25 22.9167Z"
+                  stroke="#787878" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M43.4167 9.60416C42.3526 8.53958 41.0892 7.69508 39.6986 7.11891C38.3081 6.54274 36.8177 6.24619 35.3125 6.24619C33.8073 6.24619 32.3169 6.54274 30.9263 7.11891C29.5358 7.69508 28.2724 8.53958 27.2083 9.60416L25 11.8125L22.7917 9.60416C20.6423 7.4548 17.7271 6.2473 14.6875 6.2473C11.6478 6.2473 8.73269 7.4548 6.58333 9.60416C4.43397 11.7535 3.22647 14.6687 3.22647 17.7083C3.22647 20.748 4.43397 23.6631 6.58333 25.8125L8.79166 28.0208L25 44.2291L41.2083 28.0208L43.4167 25.8125C44.4812 24.7484 45.3257 23.485 45.9019 22.0945C46.4781 20.7039 46.7746 19.2135 46.7746 17.7083C46.7746 16.2031 46.4781 14.7127 45.9019 13.3222C45.3257 11.9316 44.4812 10.6682 43.4167 9.60416V9.60416Z"
+                  stroke="#787878" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.75 45.8333C19.9006 45.8333 20.8334 44.9006 20.8334 43.75C20.8334 42.5994 19.9006 41.6667 18.75 41.6667C17.5994 41.6667 16.6667 42.5994 16.6667 43.75C16.6667 44.9006 17.5994 45.8333 18.75 45.8333Z"
+                  stroke="#787878" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M41.6666 45.8333C42.8172 45.8333 43.75 44.9006 43.75 43.75C43.75 42.5994 42.8172 41.6667 41.6666 41.6667C40.5161 41.6667 39.5833 42.5994 39.5833 43.75C39.5833 44.9006 40.5161 45.8333 41.6666 45.8333Z"
+                  stroke="#787878" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M2.08331 2.08334H10.4166L16 29.9792C16.1905 30.9383 16.7123 31.7999 17.474 32.4131C18.2358 33.0263 19.1889 33.3521 20.1666 33.3333H40.4166C41.3944 33.3521 42.3475 33.0263 43.1093 32.4131C43.871 31.7999 44.3928 30.9383 44.5833 29.9792L47.9166 12.5H12.5"
+                  stroke="#787878" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </div>
+</header>
+<div class="bg-[#FAFAFA] p-[1rem] grid grid-cols-4 min-h-[540px] gap-[1rem] mt-5  ">
+    <div class="bg-[url('/Project-WShop/assets/img/bgBanner2.png')] col-span-1 rounded-xl bg-cover  bg-no-repeat h-full">
+    </div>
+    <div class="bg-[url('/Project-WShop/assets/img/bgBanner.png')] col-span-3 rounded-xl p-4  gap-1  bg-cover bg-no-repeat  flex justify-start  items-end">
+        <div class="flex justify-center p-[0.5rem]  items-center rounded bg-amber-600">
+            <svg width="8" height="18" viewBox="0 0 8 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 16.1667L7 8.99999L1 1.83332" stroke="#6F6C65" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round"/>
+            </svg>
+        </div>
+        <div class="flex justify-center p-[0.5rem] items-center rounded bg-[white]">
+            <svg width="8" height="18" viewBox="0 0 8 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="stroke-2 hover:stroke-cyan-50" d="M7 1.83332L1 8.99998L7 16.1667" stroke="#6F6C65"
+                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </div>
+</div>
+<section class="p-4 pb-10 flex flex-col gap-10 shadow-md justify-center mt-10  border-2 rounded-xl">
+    <div class=" flex gap-2 items-center">
+        <h2 class="border-b-2 p-2 border-amber-500 text-2xl">دسته بندی منتخب</h2>
+        <p class="text-[14px] text-zinc-400">مشاهده دسته بندی ها > </p>
+    </div>
+    <div class="flex items-center gap-4 p-[2rem]  grid grid-cols-6">
+        <div class="bg-zinc-100 border-2 rounded h-[250px] p-8 flex justify-between items-center flex-col gap-[4rem]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" viewBox="0 0 17.998 13.999">
+                <path id="solid_shopping-basket" data-name="solid shopping-basket"
+                      d="M18,37.747v.5a.75.75,0,0,1-.75.75H17l-.816,5.712A1.5,1.5,0,0,1,14.7,46H3.3a1.5,1.5,0,0,1-1.485-1.288L1,39H.75a.75.75,0,0,1-.75-.75v-.5A.75.75,0,0,1,.75,37h2.1l3.337-4.588a1,1,0,1,1,1.617,1.176L5.327,37h7.344L10.19,33.585a1,1,0,0,1,1.617-1.176L15.144,37h2.1A.75.75,0,0,1,18,37.747Zm-8.249,5.5v-3.5a.75.75,0,0,0-1.5,0v3.5a.75.75,0,1,0,1.5,0Zm3.5,0v-3.5a.75.75,0,0,0-1.5,0v3.5a.75.75,0,1,0,1.5,0Zm-7,0v-3.5a.75.75,0,0,0-1.5,0v3.5a.75.75,0,1,0,1.5,0Z"
+                      transform="translate(0 -31.997)"/>
+            </svg>
+
+            <p>سوپر مارکت</p>
+        </div>
+        <div class="bg-zinc-100 border-2 rounded h-[250px] p-8 flex justify-between items-center flex-col gap-[4rem]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" viewBox="0 0 9.998 15.997">
+                <path id="solid_mobile" data-name="solid mobile"
+                      d="M8.5,0h-7A1.5,1.5,0,0,0,0,1.5v13A1.5,1.5,0,0,0,1.5,16h7A1.5,1.5,0,0,0,10,14.5V1.5A1.5,1.5,0,0,0,8.5,0ZM5,15a1,1,0,1,1,1-1A1,1,0,0,1,5,15Z"/>
+            </svg>
+            <p>تلفن همراه</p>
+        </div>
+        <div class="bg-zinc-100 border-2 rounded h-[250px] p-8 flex justify-between items-center flex-col gap-[4rem]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" viewBox="0 0 13.999 13.999">
+                <path id="solid_cut" data-name="solid cut"
+                      d="M8.689,39l5.2-5.2a.375.375,0,0,0,0-.53,2.625,2.625,0,0,0-3.712,0l-3.609,3.61L5.791,36.1a3,3,0,1,0-2.374,1.869L4.446,39,3.417,40.029A3,3,0,1,0,5.791,41.9l.777-.777,3.609,3.61a2.625,2.625,0,0,0,3.712,0,.375.375,0,0,0,0-.53ZM3,36a1,1,0,1,1,1-1A1,1,0,0,1,3,36Zm0,8a1,1,0,1,1,1-1A1,1,0,0,1,3,44Z"
+                      transform="translate(0 -32)"/>
+            </svg>
+            <p>سوپر مارکت</p>
+        </div>
+        <div class="bg-zinc-100 border-2 rounded h-[250px] p-8 flex justify-between items-center flex-col gap-[4rem]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" viewBox="0 0 20.002 15.999">
+                <path id="solid_tshirt" data-name="solid tshirt"
+                      d="M19.666,3.015,13.582,0a4.535,4.535,0,0,1-3.64,1.475A4.535,4.535,0,0,1,6.3,0L.217,3.015a.5.5,0,0,0-.225.672L1.779,7.265a.5.5,0,0,0,.672.225L4.22,6.625a.5.5,0,0,1,.719.45V15a1,1,0,0,0,1,1h8a1,1,0,0,0,1-1V7.072a.5.5,0,0,1,.719-.45l1.769.866a.5.5,0,0,0,.672-.225l1.791-3.575A.5.5,0,0,0,19.666,3.015Z"
+                      transform="translate(0.06)"/>
+            </svg>
+
+            <p>خانه و آشپزخانه</p>
+        </div>
+        <div class="bg-zinc-100 border-2 rounded h-[250px] p-8 flex justify-between items-center flex-col gap-[4rem]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" viewBox="0 0 17.994 13.992">
+                <path id="solid_home" data-name="solid home"
+                      d="M8.743,35.68,2.984,40.423v5.119a.5.5,0,0,0,.5.5l3.5-.009a.5.5,0,0,0,.5-.5v-2.99a.5.5,0,0,1,.5-.5h2a.5.5,0,0,1,.5.5v2.987a.5.5,0,0,0,.5.5l3.5.01a.5.5,0,0,0,.5-.5V40.42L9.221,35.68a.381.381,0,0,0-.478,0Zm9.1,3.224-2.611-2.153V32.425a.375.375,0,0,0-.375-.375H13.1a.375.375,0,0,0-.375.375v2.268l-2.8-2.3a1.5,1.5,0,0,0-1.905,0L.121,38.9a.375.375,0,0,0-.05.528l.8.968a.375.375,0,0,0,.528.051L8.743,34.4a.381.381,0,0,1,.478,0l7.348,6.052a.375.375,0,0,0,.528-.05l.8-.968a.375.375,0,0,0-.053-.529Z"
+                      transform="translate(0.015 -32.05)"/>
+            </svg>
+
+            <p>کتاب و هنر</p>
+        </div>
+        <div class="bg-zinc-100 border-2 rounded h-[250px] p-8 flex justify-between items-center flex-col gap-[4rem]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="60" height="40" viewBox="0 0 13.996 15.995">
+                <path id="solid_book" data-name="solid book"
+                      d="M14,11.246V.75a.748.748,0,0,0-.75-.75H3A3,3,0,0,0,0,3V13a3,3,0,0,0,3,3H13.246a.748.748,0,0,0,.75-.75v-.5a.756.756,0,0,0-.278-.584,6.967,6.967,0,0,1,0-2.334A.744.744,0,0,0,14,11.246ZM4,4.186A.188.188,0,0,1,4.186,4h6.623A.188.188,0,0,1,11,4.186v.625A.188.188,0,0,1,10.809,5H4.186A.188.188,0,0,1,4,4.811Zm0,2A.188.188,0,0,1,4.186,6h6.623A.188.188,0,0,1,11,6.186V6.81A.188.188,0,0,1,10.809,7H4.186A.188.188,0,0,1,4,6.81ZM11.915,14H3a1,1,0,0,1,0-2h8.916A11.247,11.247,0,0,0,11.915,14Z"/>
+            </svg>
+            <p>کتاب های تحصیلی</p>
+        </div>
+    </div>
+</section>
+<section class="p-4 pb-10 flex flex-col gap-10 shadow-md justify-center mt-10  border-2 rounded-xl ">
+    <div class=" flex gap-2 items-center">
+        <h2 class="border-b-2 p-2 border-amber-500 text-2xl">دسته بندی منتخب</h2>
+        <p class="text-[14px] text-zinc-400">مشاهده دسته بندی ها > </p>
+    </div>
+    <div class="flex items-center gap-4 p-[2rem]  grid grid-cols-4">
+        <div class=" border-2 rounded p-8 flex justify-between  items-center flex-col gap-[4rem]">
+            <div class=" w-[100%] h-[250px] bg-[url('/Project-WShop/assets/img/watchPng.png')] bg-no-repeat bg-contain bg-center">
+            </div>
+            <p class="text-center">ساعت هوشمند گاکسی واچ 2</p>
+            <div class="w-[100%]">
+                <p>قیمت</p>
+                <div class="flex justify-between ">
+                    <p>2,3000,000</p>
+                    <svg class="fill-red-500" xmlns="http://www.w3.org/2000/svg" width="40" height="30"
+                         viewBox="0 0 15.993 13.994">
+                        <path id="solid_heart" data-name="solid heart"
+                              d="M14.429,32.924a4.272,4.272,0,0,0-5.829.425l-.615.634-.615-.634a4.271,4.271,0,0,0-5.829-.425,4.485,4.485,0,0,0-.309,6.494l6.044,6.241a.979.979,0,0,0,1.415,0l6.044-6.241a4.482,4.482,0,0,0-.306-6.494Z"
+                              transform="translate(0.012 -31.967)"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class=" border-2 rounded p-8 flex justify-between  items-center flex-col gap-[4rem]">
+            <div class=" w-[100%] h-[250px] bg-[url('/Project-WShop/assets/img/watchPng.png')] bg-no-repeat bg-contain bg-center">
+            </div>
+            <p class="text-center">ساعت هوشمند گاکسی واچ 2</p>
+            <div class="w-[100%]">
+                <p>قیمت</p>
+                <div class="flex justify-between ">
+                    <p>2,3000,000</p>
+                    <svg class="fill-red-500" xmlns="http://www.w3.org/2000/svg" width="40" height="30"
+                         viewBox="0 0 15.993 13.994">
+                        <path id="solid_heart" data-name="solid heart"
+                              d="M14.429,32.924a4.272,4.272,0,0,0-5.829.425l-.615.634-.615-.634a4.271,4.271,0,0,0-5.829-.425,4.485,4.485,0,0,0-.309,6.494l6.044,6.241a.979.979,0,0,0,1.415,0l6.044-6.241a4.482,4.482,0,0,0-.306-6.494Z"
+                              transform="translate(0.012 -31.967)"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class=" border-2 rounded p-8 flex justify-between  items-center flex-col gap-[4rem]">
+            <div class=" w-[100%] h-[250px] bg-[url('/Project-WShop/assets/img/watchPng.png')] bg-no-repeat bg-contain bg-center">
+            </div>
+            <p class="text-center">ساعت هوشمند گاکسی واچ 2</p>
+            <div class="w-[100%]">
+                <p>قیمت</p>
+                <div class="flex justify-between ">
+                    <p>2,3000,000</p>
+                    <svg class="fill-red-500" xmlns="http://www.w3.org/2000/svg" width="40" height="30"
+                         viewBox="0 0 15.993 13.994">
+                        <path id="solid_heart" data-name="solid heart"
+                              d="M14.429,32.924a4.272,4.272,0,0,0-5.829.425l-.615.634-.615-.634a4.271,4.271,0,0,0-5.829-.425,4.485,4.485,0,0,0-.309,6.494l6.044,6.241a.979.979,0,0,0,1.415,0l6.044-6.241a4.482,4.482,0,0,0-.306-6.494Z"
+                              transform="translate(0.012 -31.967)"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class=" border-2 rounded p-8 flex justify-between  items-center flex-col gap-[4rem]">
+            <div class=" w-[100%] h-[250px] bg-[url('/Project-WShop/assets/img/watchPng.png')] bg-no-repeat bg-contain bg-center">
+            </div>
+            <p class="text-center">ساعت هوشمند گاکسی واچ 2</p>
+            <div class="w-[100%]">
+                <p>قیمت</p>
+                <div class="flex justify-between ">
+                    <p>2,3000,000</p>
+                    <svg class="fill-red-500" xmlns="http://www.w3.org/2000/svg" width="40" height="30"
+                         viewBox="0 0 15.993 13.994">
+                        <path id="solid_heart" data-name="solid heart"
+                              d="M14.429,32.924a4.272,4.272,0,0,0-5.829.425l-.615.634-.615-.634a4.271,4.271,0,0,0-5.829-.425,4.485,4.485,0,0,0-.309,6.494l6.044,6.241a.979.979,0,0,0,1.415,0l6.044-6.241a4.482,4.482,0,0,0-.306-6.494Z"
+                              transform="translate(0.012 -31.967)"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="grid grid-cols-2 h-[350px] gap-4 mt-10">
+    <div class="bg-[url('/Project-WShop/assets/img/bannerApple.png')]  bg-no-repeat bg-cover "></div>
+    <div class="bg-[url('/Project-WShop/assets/img/bannerWatch.png')]  bg-no-repeat bg-cover"></div>
+</section>
+<section class="p-4 pb-10 flex flex-col gap-10 shadow-md justify-center mt-10  border-2 rounded-xl">
+    <div class=" flex gap-2 items-center">
+        <h2 class="border-b-2 p-2 border-amber-500 text-2xl">دسته بندی منتخب</h2>
+        <p class="text-[14px] text-zinc-400">مشاهده دسته بندی ها > </p>
+    </div>
+    <div class="flex items-center gap-4 p-[2rem]  grid grid-cols-4">
+        <div class=" border-2 rounded p-8 flex justify-between  items-center flex-col gap-[4rem]">
+            <div class=" w-[100%] h-[250px] bg-[url('/Project-WShop/assets/img/watchPng.png')] bg-no-repeat bg-contain bg-center">
+            </div>
+            <p class="text-center">ساعت هوشمند گاکسی واچ 2</p>
+            <div class="w-[100%]">
+                <p>قیمت</p>
+                <div class="flex justify-between ">
+                    <p>2,3000,000</p>
+                    <svg class="fill-red-500" xmlns="http://www.w3.org/2000/svg" width="40" height="30"
+                         viewBox="0 0 15.993 13.994">
+                        <path id="solid_heart" data-name="solid heart"
+                              d="M14.429,32.924a4.272,4.272,0,0,0-5.829.425l-.615.634-.615-.634a4.271,4.271,0,0,0-5.829-.425,4.485,4.485,0,0,0-.309,6.494l6.044,6.241a.979.979,0,0,0,1.415,0l6.044-6.241a4.482,4.482,0,0,0-.306-6.494Z"
+                              transform="translate(0.012 -31.967)"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class=" border-2 rounded p-8 flex justify-between  items-center flex-col gap-[4rem]">
+            <div class=" w-[100%] h-[250px] bg-[url('/Project-WShop/assets/img/watchPng.png')] bg-no-repeat bg-contain bg-center">
+            </div>
+            <p class="text-center">ساعت هوشمند گاکسی واچ 2</p>
+            <div class="w-[100%]">
+                <p>قیمت</p>
+                <div class="flex justify-between ">
+                    <p>2,3000,000</p>
+                    <svg class="fill-red-500" xmlns="http://www.w3.org/2000/svg" width="40" height="30"
+                         viewBox="0 0 15.993 13.994">
+                        <path id="solid_heart" data-name="solid heart"
+                              d="M14.429,32.924a4.272,4.272,0,0,0-5.829.425l-.615.634-.615-.634a4.271,4.271,0,0,0-5.829-.425,4.485,4.485,0,0,0-.309,6.494l6.044,6.241a.979.979,0,0,0,1.415,0l6.044-6.241a4.482,4.482,0,0,0-.306-6.494Z"
+                              transform="translate(0.012 -31.967)"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class=" border-2 rounded p-8 flex justify-between  items-center flex-col gap-[4rem]">
+            <div class=" w-[100%] h-[250px] bg-[url('/Project-WShop/assets/img/watchPng.png')] bg-no-repeat bg-contain bg-center">
+            </div>
+            <p class="text-center">ساعت هوشمند گاکسی واچ 2</p>
+            <div class="w-[100%]">
+                <p>قیمت</p>
+                <div class="flex justify-between ">
+                    <p>2,3000,000</p>
+                    <svg class="fill-red-500" xmlns="http://www.w3.org/2000/svg" width="40" height="30"
+                         viewBox="0 0 15.993 13.994">
+                        <path id="solid_heart" data-name="solid heart"
+                              d="M14.429,32.924a4.272,4.272,0,0,0-5.829.425l-.615.634-.615-.634a4.271,4.271,0,0,0-5.829-.425,4.485,4.485,0,0,0-.309,6.494l6.044,6.241a.979.979,0,0,0,1.415,0l6.044-6.241a4.482,4.482,0,0,0-.306-6.494Z"
+                              transform="translate(0.012 -31.967)"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <div class=" border-2 rounded p-8 flex justify-between  items-center flex-col gap-[4rem]">
+            <div class=" w-[100%] h-[250px] bg-[url('/Project-WShop/assets/img/watchPng.png')] bg-no-repeat bg-contain bg-center">
+            </div>
+            <p class="text-center">ساعت هوشمند گاکسی واچ 2</p>
+            <div class="w-[100%]">
+                <p>قیمت</p>
+                <div class="flex justify-between ">
+                    <p>2,3000,000</p>
+                    <svg class="fill-red-500" xmlns="http://www.w3.org/2000/svg" width="40" height="30"
+                         viewBox="0 0 15.993 13.994">
+                        <path id="solid_heart" data-name="solid heart"
+                              d="M14.429,32.924a4.272,4.272,0,0,0-5.829.425l-.615.634-.615-.634a4.271,4.271,0,0,0-5.829-.425,4.485,4.485,0,0,0-.309,6.494l6.044,6.241a.979.979,0,0,0,1.415,0l6.044-6.241a4.482,4.482,0,0,0-.306-6.494Z"
+                              transform="translate(0.012 -31.967)"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="bg-[url('/Project-WShop/assets/img/viewLondon.png')] w-full h-[300px] bg-cover bg-no-repeat rounded-xl mt-10"></section>
+<footer class="p-4 border-2 shadow-md grid grid-cols-4 text-center mt-10 rounded-xl">
+    <div class="border-l-2 flex justify-center items-center flex-col gap-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" viewBox="0 0 14.999 15.997">
+            <path id="solid_shield-alt" data-name="solid shield-alt" d="M30.077,2.64l-6-2.5a1.5,1.5,0,0,0-1.153,0l-6,2.5A1.5,1.5,0,0,0,16,4.024c0,6.2,3.578,10.49,6.921,11.883a1.5,1.5,0,0,0,1.153,0C26.752,14.791,31,10.939,31,4.024A1.5,1.5,0,0,0,30.077,2.64ZM23.5,13.97l0-11.905L29,4.355C28.892,9.086,26.43,12.514,23.5,13.97Z" transform="translate(-16 -0.025)"/>
+        </svg>
+        <h3 class="font-bold">ضمانت اصل بودن کالا </h3>
+        <p class="text-gray-300">تضمین اصالت و گارانتی </p>
+    </div>
+    <div class="border-l-2 flex justify-center items-center flex-col gap-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" viewBox="0 0 14.999 15.997">
+            <path id="solid_shield-alt" data-name="solid shield-alt" d="M30.077,2.64l-6-2.5a1.5,1.5,0,0,0-1.153,0l-6,2.5A1.5,1.5,0,0,0,16,4.024c0,6.2,3.578,10.49,6.921,11.883a1.5,1.5,0,0,0,1.153,0C26.752,14.791,31,10.939,31,4.024A1.5,1.5,0,0,0,30.077,2.64ZM23.5,13.97l0-11.905L29,4.355C28.892,9.086,26.43,12.514,23.5,13.97Z" transform="translate(-16 -0.025)"/>
+        </svg>
+        <h3 class="font-bold">ضمانت اصل بودن کالا </h3>
+        <p class="text-gray-300">تضمین اصالت و گارانتی </p>
+    </div>
+    <div class="border-l-2 flex justify-center items-center flex-col gap-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" viewBox="0 0 14.999 15.997">
+            <path id="solid_shield-alt" data-name="solid shield-alt" d="M30.077,2.64l-6-2.5a1.5,1.5,0,0,0-1.153,0l-6,2.5A1.5,1.5,0,0,0,16,4.024c0,6.2,3.578,10.49,6.921,11.883a1.5,1.5,0,0,0,1.153,0C26.752,14.791,31,10.939,31,4.024A1.5,1.5,0,0,0,30.077,2.64ZM23.5,13.97l0-11.905L29,4.355C28.892,9.086,26.43,12.514,23.5,13.97Z" transform="translate(-16 -0.025)"/>
+        </svg>
+        <h3 class="font-bold">ضمانت اصل بودن کالا </h3>
+        <p class="text-gray-300">تضمین اصالت و گارانتی </p>
+    </div>
+    <div class="flex justify-center items-center flex-col gap-4">
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" viewBox="0 0 14.999 15.997">
+            <path id="solid_shield-alt" data-name="solid shield-alt" d="M30.077,2.64l-6-2.5a1.5,1.5,0,0,0-1.153,0l-6,2.5A1.5,1.5,0,0,0,16,4.024c0,6.2,3.578,10.49,6.921,11.883a1.5,1.5,0,0,0,1.153,0C26.752,14.791,31,10.939,31,4.024A1.5,1.5,0,0,0,30.077,2.64ZM23.5,13.97l0-11.905L29,4.355C28.892,9.086,26.43,12.514,23.5,13.97Z" transform="translate(-16 -0.025)"/>
+        </svg>
+        <h3 class="font-bold">ضمانت اصل بودن کالا </h3>
+        <p class="text-gray-300">تضمین اصالت و گارانتی </p>
+    </div>
+</footer>
 </body>
 </html>
